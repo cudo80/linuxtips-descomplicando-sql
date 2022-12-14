@@ -29,3 +29,11 @@ FROM
   silver_olist.pedido
 LIMIT
   5 -- leia-se: selecione as colunas idPedido e descSituacao da tabela silver_olist.pedido
+
+-- COMMAND ----------
+
+SELECT
+  *,
+  DATEDIFF(dtEstimativaEntrega, dtEntregue) AS qtDiasPromessaEntrega
+FROM
+  silver_olist.pedido
